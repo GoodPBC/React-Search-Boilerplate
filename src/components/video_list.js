@@ -1,11 +1,14 @@
 import React from 'react';
-import VideoListItem from '.video_list_item'
+import VideoListItem from './video_list_item';
 
 const VideoList = (props) => {
-  return(
+  const videoItems = props.videos.map((video) => {
+    return <VideoListItem key={video.etag} video={video} />
+  });
 
-  <ul  className="collection">
-    {props.videos.map}
+  return(
+  <ul className="collection" col s4>
+    {videoItems}
   </ul>
   )
 }
